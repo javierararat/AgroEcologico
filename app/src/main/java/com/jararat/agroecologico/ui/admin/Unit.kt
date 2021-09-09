@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 data class Unit(
         var name:String? ="",
-        var descrition:String? =""
+        var description:String? =""
 ): Parcelable
 {
     constructor(parcel: Parcel) : this(
@@ -16,7 +16,7 @@ data class Unit(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
-        parcel.writeString(descrition)
+        parcel.writeString(description)
     }
 
     override fun describeContents(): Int {
