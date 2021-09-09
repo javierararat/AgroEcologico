@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.jararat.agroecologico.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_list_markets"
+        android:name="com.jararat.agroecologico.ui.admin.ListMarketFragment"
+        android:label="@string/list_sales_position"
+        tools:layout="@layout/fragment_list_market" />
+
+    <fragment
+        android:id="@+id/nav_create_sales_position"
+        android:name="com.jararat.agroecologico.ui.admin.CreateMarketFragment"
+        android:label="@string/create_sales_position"
+        tools:layout="@layout/fragment_create_sales_position" />
+
+    <fragment
+        android:id="@+id/nav_add_sales_unit"
+        android:name="com.jararat.agroecologico.ui.admin.CreateUnitFragment"
+        android:label="@string/add_sales_unit"
+        tools:layout="@layout/fragment_add_sales_unit" />
+
+
+    <fragment
+        android:id="@+id/nav_list_units"
+        android:name="com.jararat.agroecologico.ui.admin.ListUnitFragment"
+        android:label="@string/list_units"
+        tools:layout="@layout/fragment_list_unit" />
+</navigation>

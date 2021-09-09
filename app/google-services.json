@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296771277570",
+    "project_id": "agroecologico-fc8bf",
+    "storage_bucket": "agroecologico-fc8bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296771277570:android:b8ea772b1610609490681b",
+        "android_client_info": {
+          "package_name": "com.jararat.agroecologico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296771277570-22jc1vojlpgr2lk0nf8dfh0pmb7fhamc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-KI1ej_PfLXiO2QHfUwmd8kXhgPWYC-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296771277570-22jc1vojlpgr2lk0nf8dfh0pmb7fhamc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
