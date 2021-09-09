@@ -38,7 +38,7 @@ class UnitAdapter (private val dataSetUnits: List<Unit>,private val listener: On
         with(holder){
             setListener(market)
             viewBinding.tvNameUnit.text = market.name
-            viewBinding.tvAlterEgoUnit.text = market.descrition
+            viewBinding.tvAlterEgoUnit.text = market.description
             /*Glide.with(context)
                 .load(market.url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
