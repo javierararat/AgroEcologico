@@ -15,5 +15,10 @@
     <string name="add_sales_unit">Adicionar Unidad de Venta</string>
     <string name="list_units">Lista de Unidades de Venta</string>
 
+    <string name="personalize_sales_position">Personalizar Puesto</string>
+
+    <string name="confirm_dialog">Guardar</string>
+    <string name="list_products">Lista de Productos</string>
+    <string name="add_product">Adicionar Producto</string>
 
 </resources>

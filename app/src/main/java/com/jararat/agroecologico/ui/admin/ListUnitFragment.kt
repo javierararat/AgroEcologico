@@ -128,6 +128,9 @@ class ListUnitFragment : Fragment(), OnClickListener {
         //editar
     }
 
+    override fun onClick(prod: Product) {
+        TODO("Not yet implemented")
+    }
 
 
 }

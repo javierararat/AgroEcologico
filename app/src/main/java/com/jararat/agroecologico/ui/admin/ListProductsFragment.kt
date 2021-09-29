@@ -22,13 +22,14 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.jararat.agroecologico.R
 import com.jararat.agroecologico.databinding.FragmentListMarketBinding
+import com.jararat.agroecologico.databinding.FragmentListProductBinding
 import kotlin.math.log
 
-class ListMarketFragment: Fragment(), OnClickListener {
+class ListProductsFragment: Fragment(), OnClickListener {
 
-    private lateinit var marketAdapter: MarketAdapter
+    private lateinit var productAdapter: ProductAdapter
     private lateinit var linearLayoutManager: RecyclerView.LayoutManager
-    private lateinit var viewBinding: FragmentListMarketBinding
+    private lateinit var viewBinding: FragmentListProductBinding
 
     private lateinit var rvList: RecyclerView
 
@@ -38,7 +39,7 @@ class ListMarketFragment: Fragment(), OnClickListener {
     private lateinit var dbReference: DatabaseReference
     private lateinit var db: FirebaseDatabase
 
-    val list = mutableListOf<Market>()
+    val list = mutableListOf<Product>()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -51,14 +52,14 @@ class ListMarketFragment: Fragment(), OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_list_market, container, false)
+        val root = inflater.inflate(R.layout.fragment_list_product, container, false)
 
         db = FirebaseDatabase.getInstance()
-        dbReference =  db.reference.child("User")
-        getMarkets()
-        viewBinding = FragmentListMarketBinding.inflate(layoutInflater)
+        dbReference =  db.reference.child("User").child("010101").child("productos")
+        getProducts()
+        viewBinding = FragmentListProductBinding.inflate(layoutInflater)
 
-        rvList  =   root.findViewById(R.id.rv_ListMarket)
+        rvList  =   root.findViewById(R.id.rv_ListProduct)
 
         return root
     }
@@ -71,46 +72,24 @@ class ListMarketFragment: Fragment(), OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
-        /*viewBinding.rvListMarket.apply {
-            layoutManager =  linearLayoutManager
-            adapter =  marketAdapter
-        }
-
-        viewBinding.rvListMarket.layoutManager = linearLayoutManager
-        viewBinding.rvListMarket.adapter = marketAdapter*/
-
         updateView()
     }
 
-     private  fun getMarkets() {
-        //val list = mutableListOf<Market>()
-
-        var t = Market("q","dd","te","dd@ddd", "wwe", "wwe")
-        list.add(t)
-
+     private  fun getProducts() {
 
          dbReference.get().addOnCompleteListener  { task ->
-            //val response = MutableLiveData<Market>()
             if (task.isSuccessful) {
                 val result = task.result
                 result?.let {
-                    /* response = result.children.map { snapShot ->
-                         snapShot.getValue(Market::class.java)!!
-                     }*/
-
                     for (postSnapshot in result.children) {
                         // TODO: handle the post
                         var snap = (postSnapshot as DataSnapshot)
-                        var myTasksDTO = snap.getValue(Market::class.java)
+                        var myTasksDTO = snap.getValue(Product::class.java)
                         if (myTasksDTO != null) {
                             list.add(myTasksDTO)
                         }
-
                     }
-
                     updateView()
-
                 }
             }
         }
@@ -118,13 +97,10 @@ class ListMarketFragment: Fragment(), OnClickListener {
 
 
      fun updateView() {
-        //editar
-
-         marketAdapter = MarketAdapter(list, this)
+         productAdapter = ProductAdapter(list, this)
          linearLayoutManager = LinearLayoutManager(this.context)
-
          rvList.layoutManager = linearLayoutManager
-         rvList.adapter = marketAdapter
+         rvList.adapter = productAdapter
     }
 
 

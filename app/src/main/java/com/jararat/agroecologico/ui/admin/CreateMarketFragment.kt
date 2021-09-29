@@ -156,6 +156,7 @@ class CreateMarketFragment : Fragment()  {
                     userDB.child("email").setValue(email)
                     userDB.child("password").setValue(pass)
                     userDB.child("url").setValue("")
+                    userDB.child("nameSpecial").setValue("")
 
                     Toast.makeText(thiscontext, "Se ha registrado el puesto", Toast.LENGTH_SHORT)
                             .show()

@@ -6,6 +6,7 @@ import android.os.Parcelable
 
 data class Market(
     var name:String? ="",
+    var nameSpecial:String? ="",
     var identification:String? ="",
     var tel:String? ="",
     var email:String? ="",
@@ -19,6 +20,7 @@ data class Market(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
+        parcel.readString(),
         parcel.readString()
        // parcel.readParcelable(Bitmap::class.java.classLoader)
     ) {
@@ -26,6 +28,7 @@ data class Market(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
+        parcel.writeString(nameSpecial)
         parcel.writeString(identification)
         parcel.writeString(tel)
         parcel.writeString(email)

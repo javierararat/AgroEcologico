@@ -11,7 +11,7 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
+    <!--fragment
         android:id="@+id/nav_list_markets"
         android:name="com.jararat.agroecologico.ui.admin.ListMarketFragment"
         android:label="@string/list_sales_position"
@@ -34,5 +34,35 @@
         android:id="@+id/nav_list_units"
         android:name="com.jararat.agroecologico.ui.admin.ListUnitFragment"
         android:label="@string/list_units"
-        tools:layout="@layout/fragment_list_unit" />
+        tools:layout="@layout/fragment_list_unit" /-->
+
+
+    <fragment
+        android:id="@+id/nav_personalize_sales_position"
+        android:name="com.jararat.agroecologico.ui.admin.PersonalizeMarketFragment"
+        android:label="@string/personalize_sales_position"
+        tools:layout="@layout/fragment_personalize_sales_position" />
+
+
+
+    <fragment
+        android:id="@+id/nav_sales_sub_seller"
+        android:name="com.jararat.agroecologico.ui.admin.PersonalizeMarketSellerFragment"
+        android:label="Vendedor del puesto"
+        tools:layout="@layout/fragment_sales_sub_seller" />
+
+
+    <fragment
+        android:id="@+id/nav_list_products"
+        android:name="com.jararat.agroecologico.ui.admin.ListProductsFragment"
+        android:label="Lista de Productos"
+        tools:layout="@layout/fragment_list_product" />
+
+
+
+    <fragment
+        android:id="@+id/nav_product"
+        android:name="com.jararat.agroecologico.ui.admin.CreateProductFragment"
+        android:label="Producto"
+        tools:layout="@layout/fragment_product" />
 </navigation>

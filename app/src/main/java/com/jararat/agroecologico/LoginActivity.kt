@@ -32,13 +32,15 @@ class LoginActivity : AppCompatActivity() {
         auth =  FirebaseAuth.getInstance()
 
 
-        txtuser.setText("javier.ararat@correounivalle.edu.co");
+        txtuser.setText("javier.ararat926@gmail.com");
         txtpass.setText("12345678");
     }
 
 
     fun login (View: View){
         Auth()
+        //next()
+
     }
 
     fun register (View: View){

@@ -4,4 +4,7 @@ interface OnClickListener {
     fun onClick(market: Market)
 
     fun onClick(unit: Unit)
+    abstract fun onClick(prod: Product)
+
+    //fun onClick(seller: Seller)
 }
